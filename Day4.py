@@ -1,10 +1,7 @@
 # Write a program to find the sum of all elements in a list.
 
 def sum_all_elements(provided_list):
-    end_value = 0
-    for value in provided_list:
-        end_value = value + end_value
-    return end_value
+    return sum(provided_list)
 
 
 elements = [1, 2, 3, 4, 5, 6]
