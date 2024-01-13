@@ -7,7 +7,8 @@ def vowel_count(text):
         search = vowels.find(character)
         if search != -1:
             count += 1
-    print(count)
+
+    print("Number of vowels in string is: ", count)
 
 
 vowel_count('Hi, my name is Brittany MCNAIR')
