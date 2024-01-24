@@ -7,10 +7,7 @@ def leapyeartest():
     except:
         return "Invalid Year format, should be YYYY"
 
-
-    lytest = year%4
-    centurytest = year%100
-    if lytest == 0 and centurytest != 0:
+    if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
         return "heyy!! Leap year!"
     else:
         return "booo nope not Leap year!!"
