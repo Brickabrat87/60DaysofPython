@@ -1,34 +1,21 @@
-def findMaxSum(A: List[int], N: int, K: int) -> int:
-    current_sum = sum(A[:K])
-    answer = current_sum
+#Write a function to find the largest common divisor of two numbers using a function
+def lcd_two_numbers(num1,num2):
+    if num1==0:
+        return num2
 
-    for i in range(K, N):
-        current_sum = current_sum + A[i] - A[i - K]
-        answer = max(answer, current_sum)
+    if num2==0:
+        return num1
 
-    return answer
+    if num1==num2:
+        return num1
 
-#Python program to find n-th stair
-# using step size 1 or 2 or 3.
+    if num1>num2:
+        return lcd_two_numbers(num1-num2,num2)
+    return lcd_two_numbers(num1,num2-num1)
 
-# Returns count of ways to reach n-th
-# stair using 1 or 2 or 3 steps.
-
-
-def findStep(n):
-	if ( n == 0 ):
-		return 1
-	elif (n < 0):
-		return 0
-
-	else:
-		return findStep(n - 3) + findStep(n - 2) + findStep(n - 1)
-
-
-# Driver code
-n = 4
-print(findStep(n))
-
-# This code is contributed by Nikita Tiwari.
-
-
+try:
+    x=int(input("Enter the first number: "))
+    y=int(input("\nEnter the second number: "))
+    print(f"\nLargest Common Divisor of {x} and {y} is: ",lcd_two_numbers(x,y))
+except Exception as e:
+    print('Invalid Entry. Please try again.')
